@@ -16,7 +16,7 @@ RUN apk add \
     musl-dev \
     bash
 # Install Python dependencies
-COPY requirements.txt /app/
+COPY mysite/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
