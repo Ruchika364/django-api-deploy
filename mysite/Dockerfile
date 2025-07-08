@@ -10,13 +10,11 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install system dependencies
-RUN apk update && apk add --no-cache \
+RUN apk add \
+    pkgconfig \
     gcc \
     musl-dev \
-    mariadb-dev \
-    bash \
-    pkgconfig
-
+    bash
 # Install Python dependencies
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
